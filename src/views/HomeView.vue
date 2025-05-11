@@ -1,5 +1,10 @@
 <template>
-    <h1>Kanban Board</h1>
-    <h2>Description</h2>
-    <p>This is a simple Kanban Board.</p>
+    <main class="page-container">
+        <h1>Kanban Board</h1>
+        <KanbanBoard />
+    </main>
 </template>
+
+<script setup>
+import KanbanBoard from "../components/KanbanBoard.vue";
+</script>
