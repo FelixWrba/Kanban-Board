@@ -1,5 +1,6 @@
 <script setup>
 import { ref } from "vue";
+import { RouterLink } from "vue-router";
 import { HomeIcon, Cog6ToothIcon } from "@heroicons/vue/24/outline";
 
 const isOpen = ref(false);
@@ -8,15 +9,15 @@ const isOpen = ref(false);
 <template>
     <nav @mouseover="isOpen = true" @mouseleave="isOpen = false" :class="isOpen ? '' : 'hidden'">
         <div class="links">
-            <a href="#">
+            <router-link to="/" @click="isOpen = false">
                 <HomeIcon /> Home
-            </a>
-            <a href="#">
+            </router-link>
+            <router-link to="/settings" @click="isOpen = false">
                 <Cog6ToothIcon />Settings
-            </a>
+            </router-link>
         </div>
         <div class="legal">
-            <a href="/about">About</a> • <a href="/imprint">Imprint</a>
+            <router-link to="/about" @click="isOpen = false">About</router-link> • <router-link to="/imprint" @click="isOpen = false">Imprint</router-link>
             <p>&copy;2025 Felix Wrba. All rights reserved.</p>
         </div>
     </nav>
@@ -65,7 +66,6 @@ nav.hidden {
 
 .links a:hover {
     background-color: var(--secondary-c);
-    transform: scale(1.1);
 }
 
 .links svg {
