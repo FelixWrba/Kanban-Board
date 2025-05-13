@@ -51,7 +51,7 @@ function sortByEnabled(columns) {
 }
 </script>
 
-<style>
+<style scoped>
 .board {
     display: flex;
     border: 1px solid var(--acc-c);

@@ -8,6 +8,8 @@
   font-family: 'Roboto', Arial, Helvetica, sans-serif;
   font-weight: 400;
   font-synthesis: none;
+  color: var(--text-c);
+  transition: color 1s, background 1s;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -15,9 +17,19 @@
   --text-c: #000;
   --bg-c: #fff;
   --primary-c: #00ff00;
-  --secondary-c:rgb(193, 255, 193);
+  --secondary-c: rgb(193, 255, 193);
   --acc-c: #9b9b9b;
   --page-c: #eeffee;
+}
+
+[data-theme=dark] {
+  /* COLOR */
+  --text-c: #dbdbdb;
+  --bg-c: #000;
+  --primary-c: #00a800;
+  --secondary-c: rgb(0, 167, 0);
+  --acc-c: #575757;
+  --page-c: #001d00;
 }
 
 body {
@@ -48,6 +60,22 @@ a {
 }
 
 .link-btn:hover {
+  box-shadow: 2px 2px 20px 2px rgba(0, 255, 0, 0.3);
+}
+
+.btn {
+  border-width: 0;
+  outline-color: transparent;
+  padding: 4px 12px;
+  border-radius: 4px;
+  background-color: var(--primary-c);
+  transition: all .3s;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 1em;
+}
+
+.btn:hover {
   box-shadow: 2px 2px 20px 2px rgba(0, 255, 0, 0.3);
 }
 
