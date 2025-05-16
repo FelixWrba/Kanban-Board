@@ -1,25 +1,40 @@
 {
-    "tile": "overvue",
-    "backlog": "not important",
+  "home": {
+    "title": "Overvue"
+  },
+  "board": {
+    "backlog": "skibidi",
     "tasks": "todo",
     "progress": "doin",
-    "done": "SUII",
-    "settings": "Config",
+    "done": "sigma"
+  },
+  "settings": {
+    "title": "Config",
     "accessability": "Stuff",
     "language": "speak",
     "english": "englis",
     "german": "tschörmen",
-    "slang": "this lang",
+    "slang": "that lang",
     "theme": "look",
     "light": "nahh",
     "dark": "nice",
-    "auto": "bruh",
+    "auto": "car",
     "data": "data",
     "deleteData": "ohio",
     "exportData": "X port",
     "importData": "IM port",
-    "viewData": "show",
-    "about": "what?",
+    "viewData": "show"
+  },
+  "navigation": {
+    "home": "House",
+    "settings": "Gear",
+    "about": "What?",
     "imprint": "Imprint",
     "copyright": "All rights reserved."
+  },
+  "notFound": {
+    "title": "someting went wong",
+    "message": "file dont exist here",
+    "action": "give up"
   }
+}

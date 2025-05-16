@@ -1,25 +1,40 @@
 {
-  "tile": "Kanban Board",
-  "backlog": "Backlog",
-  "tasks": "Tasks",
-  "progress": "In progress",
-  "done": "Done",
-  "settings": "Settings",
-  "accessability": "Accessibility",
-  "language": "Language",
-  "english": "English",
-  "german": "German",
-  "slang": "Slang",
-  "theme": "Theme",
-  "light": "Light",
-  "dark": "Dark",
-  "auto": "Auto",
-  "data": "Data",
-  "deleteData": "Delete Data",
-  "exportData": "Export Data",
-  "importData": "Import Data",
-  "viewData": "View Data",
-  "about": "About",
-  "imprint": "Imprint",
-  "copyright": "All rights reserved."
+  "home": {
+    "title": "Kanban Board"
+  },
+  "board": {
+    "backlog": "Backlog",
+    "tasks": "Tasks",
+    "progress": "In progress",
+    "done": "Done"
+  },
+  "settings": {
+    "title": "Settings",
+    "accessability": "Accessability",
+    "language": "Language",
+    "english": "English",
+    "german": "German",
+    "slang": "Slang",
+    "theme": "Theme",
+    "light": "Light",
+    "dark": "Dark",
+    "auto": "Auto",
+    "data": "Data",
+    "deleteData": "Delete Data",
+    "exportData": "Export Data",
+    "importData": "Import Data",
+    "viewData": "View Data"
+  },
+  "navigation": {
+    "home": "Home",
+    "settings": "Settings",
+    "about": "About",
+    "imprint": "Imprint",
+    "copyright": "All rights reserved."
+  },
+  "notFound": {
+    "title": "Not found",
+    "message": "The requested file could not be found on this server.",
+    "action": "Return to home page"
+  }
 }

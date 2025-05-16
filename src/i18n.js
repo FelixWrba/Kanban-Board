@@ -9,9 +9,13 @@ const messages = {
   slang: sl,
 };
 
+const preferences = JSON.parse(localStorage.getItem("preferences") || "{}");
+const language =
+  preferences.language || navigator.language === "de-DE" ? "german" : "english";
+
 const i18n = createI18n({
   legacy: false,
-  locale: "english",
+  locale: language,
   fallbackLocale: "english",
   messages,
 });

@@ -4,9 +4,9 @@
 
 <template>
     <main>
-        <h1><span class="green">404</span> Not found</h1>
-        <p>The requested file could not be found on this server.</p>
-        <router-link to="/" class="link-btn">Return to home page</router-link>
+        <h1><span class="green">404</span> {{ $t('notFound.title') }}</h1>
+        <p>{{ $t('notFound.message') }}</p>
+        <router-link to="/" class="link-btn">{{ $t('notFound.action') }}</router-link>
     </main>
 </template>
 

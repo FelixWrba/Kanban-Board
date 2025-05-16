@@ -1,34 +1,34 @@
 <template>
     <main class="page-container">
-        <h1>{{ $t('settings') }}</h1>
+        <h1>{{ $t('settings.title') }}</h1>
 
         <section class="column">
-            <h2>{{ $t('accessability') }}</h2>
+            <h2>{{ $t('settings.accessability') }}</h2>
             <div>
-                <label for="lang">{{ $t('language')}}: </label>
+                <label for="lang">{{ $t('settings.language')}}: </label>
                 <select name="lang" id="lang" v-model="preferences.language">
-                    <option value="english">{{ $t('english')}}</option>
-                    <option value="german">{{ $t('german')}}</option>
-                    <option value="slang">{{ $t('slang')}}</option>
+                    <option value="english">{{ $t('settings.english')}}</option>
+                    <option value="german">{{ $t('settings.german')}}</option>
+                    <option value="slang">{{ $t('settings.slang')}}</option>
                 </select>
             </div>
             <div>
-                <label for="theme">{{ $t('theme')}}: </label>
+                <label for="theme">{{ $t('settings.theme')}}: </label>
                 <select name="theme" id="theme" v-model="preferences.theme">
-                    <option value="light">{{ $t('light')}}</option>
-                    <option value="dark">{{ $t('dark')}}</option>
-                    <option value="auto">{{ $t('auto')}}</option>
+                    <option value="light">{{ $t('settings.light')}}</option>
+                    <option value="dark">{{ $t('settings.dark')}}</option>
+                    <option value="auto">{{ $t('settings.auto')}}</option>
                 </select>
             </div>
         </section>
 
 
         <section class="column">
-            <h2>{{ $t('data')}}</h2>
-            <button class="btn">{{ $t('deleteData')}}</button>
-            <button class="btn">{{ $t('exportData')}}</button>
-            <button class="btn">{{ $t('importData')}}</button>
-            <button class="btn">{{ $t('viewData')}}</button>
+            <h2>{{ $t('settings.data')}}</h2>
+            <button class="btn">{{ $t('settings.deleteData')}}</button>
+            <button class="btn">{{ $t('settings.exportData')}}</button>
+            <button class="btn">{{ $t('settings.importData')}}</button>
+            <button class="btn">{{ $t('settings.viewData')}}</button>
         </section>
     </main>
 </template>
@@ -40,7 +40,7 @@ import { useI18n } from 'vue-i18n';
 const { locale } = useI18n();
 
 const preferences = ref({
-    language: 'english',
+    language: locale.value,
     theme: 'auto'
 });
 
@@ -50,7 +50,6 @@ onMounted(() => {
         preferences.value = JSON.parse(data);
     }
     applyTheme(preferences.value.theme);
-    locale.value = preferences.value.language;
 });
 
 watch(preferences, (newPreferences) => {

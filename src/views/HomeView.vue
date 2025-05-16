@@ -1,6 +1,6 @@
 <template>
     <main class="page-container">
-        <h1>Kanban Board</h1>
+        <h1>{{ $t('home.title') }}</h1>
         <KanbanBoard />
     </main>
 </template>

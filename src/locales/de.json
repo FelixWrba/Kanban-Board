@@ -1,25 +1,40 @@
 {
-  "tile": "Kanban Brett",
-  "backlog": "Backlog",
-  "tasks": "Aufgaben",
-  "progress": "In Bearbeitung",
-  "done": "Erledigt",
-  "settings": "Einstellungen",
-  "accessability": "Zugänglichkeit",
-  "language": "Sprache",
-  "english": "Englisch",
-  "german": "Deutsch",
-  "slang": "Umgangsprache (en)",
-  "theme": "Farbschema",
-  "light": "Hell",
-  "dark": "Dunkel",
-  "auto": "Automatisch",
-  "data": "Daten",
-  "deleteData": "Daten löschen",
-  "exportData": "Daten exportieren",
-  "importData": "Daten importieren",
-  "viewData": "Daten ansehen",
-  "about": "Über",
-  "imprint": "Impressum",
-  "copyright": "Alle Rechte vorbehalten."
+  "home": {
+    "title": "Kanban Brett"
+  },
+  "board": {
+    "backlog": "Backlog",
+    "tasks": "Aufgaben",
+    "progress": "In Bearbeitung",
+    "done": "Erledigt"
+  },
+  "settings": {
+    "title": "Einstellungen",
+    "accessability": "Zugänglichkeit",
+    "language": "Sprache",
+    "english": "Englisch",
+    "german": "Deutsch",
+    "slang": "Umgangsprache (en)",
+    "theme": "Farbschema",
+    "light": "Hell",
+    "dark": "Dunkel",
+    "auto": "Automatisch",
+    "data": "Daten",
+    "deleteData": "Daten löschen",
+    "exportData": "Daten exportieren",
+    "importData": "Daten importieren",
+    "viewData": "Daten ansehen"
+  },
+  "navigation": {
+    "home": "Zuhause",
+    "settings": "Einstellungen",
+    "about": "Über",
+    "imprint": "Impressum",
+    "copyright": "Alle Rechte vorbehalten."
+  },
+  "notFound": {
+    "title": "Nicht gefunden",
+    "message": "Die angeforderte Datei wurde auf diesem Server nicht gefunden.",
+    "action": "Zurück zur Startseite"
+  }
 }

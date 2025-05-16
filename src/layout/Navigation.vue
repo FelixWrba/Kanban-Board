@@ -10,15 +10,15 @@ const isOpen = ref(false);
     <nav @mouseover="isOpen = true" @mouseleave="isOpen = false" :class="isOpen ? '' : 'hidden'">
         <div class="links">
             <router-link to="/" @click="isOpen = false">
-                <HomeIcon /> Home
+                <HomeIcon /> {{ $t('navigation.home') }}
             </router-link>
             <router-link to="/settings" @click="isOpen = false">
-                <Cog6ToothIcon />Settings
+                <Cog6ToothIcon />{{ $t('navigation.settings') }}
             </router-link>
         </div>
         <div class="legal">
-            <router-link to="/about" @click="isOpen = false">About</router-link> • <router-link to="/imprint" @click="isOpen = false">Imprint</router-link>
-            <p>&copy;2025 Felix Wrba. All rights reserved.</p>
+            <router-link to="/about" @click="isOpen = false">{{ $t('navigation.about') }}</router-link> • <router-link to="/imprint" @click="isOpen = false">{{ $t('navigation.imprint') }}</router-link>
+            <p>&copy;2025 Felix Wrba. {{ $t('navigation.copyright') }}</p>
         </div>
     </nav>
 </template>
