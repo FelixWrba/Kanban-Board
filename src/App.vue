@@ -4,7 +4,7 @@ import { RouterView } from "vue-router";
 import { onMounted } from "vue";
 
 onMounted(() => {
- const data = localStorage.getItem('preferences') || '{theme:"auto"}';
+ const data = localStorage.getItem('preferences') || '{ "theme": "auto" }';
  const theme = JSON.parse(data).theme;
 
  applyTheme(theme);

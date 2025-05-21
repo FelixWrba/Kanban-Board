@@ -1,29 +1,38 @@
 <template>
-    <div class="board">
-        <div class="column" v-for="column in sortByEnabled(data)" :key="column.id">
-            <h2>{{ column.name }}</h2>
-            <div v-for="item in column.data" class="item" draggable="true">
-                <span>{{ item.name }}</span>
+    <draggable v-model="columns" group="columns" item-key="id" class="board">
+        <template #item="{ element: column }">
+            <div class="column">
+                <h2>{{ column.name }}</h2>
+                <draggable v-model="column.data" group="data" item-key="id">
+                    <template #item="{ element: item }">
+                        <div class="item">
+                            <span>{{ item.name }}</span>
+                        </div>
+                    </template>
+                </draggable>
             </div>
-        </div>
-    </div>
+        </template>
+    </draggable>
 </template>
 
 <script setup>
-const data = [
+import { ref } from 'vue';
+import draggable from 'vuedraggable';
+
+const columns = ref(sortByEnabled([
     {
         id: "backlog",
         name: "Backlog",
         default: false,
         enabled: true,
-        data: [{ name: "log 1", }],
+        data: [{ name: "log 1", id: 1 }],
     },
     {
         id: "tasks",
         name: "Tasks",
         default: true,
         enabled: true,
-        data: [{ name: "taks 1" }, { name: "task 2" }],
+        data: [{ name: "taks 1", id: 2 }, { name: "task 2", id: 3 }],
     },
     {
         id: "progress",
@@ -37,9 +46,10 @@ const data = [
         name: "Done",
         default: true,
         enabled: true,
-        data: [{ name: "done 1", }],
+        data: [{ name: "done 1", id: 4 }],
     }
-];
+]));
+
 
 /**
  * Function removes objects from given array where object.enabled = false.
@@ -83,9 +93,5 @@ function sortByEnabled(columns) {
     border: 1px solid #ff4e4e;
     background-color: rgb(255, 195, 195);
     cursor: pointer;
-}
-
-.item:active {
-    cursor: move;
 }
 </style>

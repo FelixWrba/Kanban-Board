@@ -36,6 +36,7 @@ nav {
     box-shadow: 0px 0px 0px 100vw rgba(0, 0, 0, 0.1);
     border-right: 1px solid var(--acc-c);
     padding: 16px;
+    padding-left: 0;
 }
 
 nav.hidden {
@@ -59,8 +60,8 @@ nav.hidden {
     display: flex;
     align-items: center;
     gap: 4px;
-    padding: 6px;
-    border-radius: 4px;
+    padding: 8px;
+    border-radius: 0 99px 99px 0;
     transition: all .3s;
 }
 
