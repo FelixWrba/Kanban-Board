@@ -19,6 +19,7 @@
     "light": "Light",
     "dark": "Dark",
     "auto": "Auto",
+    "columns": "Columns",
     "data": "Data",
     "deleteData": "Delete Data",
     "exportData": "Export Data",

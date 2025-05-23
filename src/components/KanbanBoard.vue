@@ -1,7 +1,7 @@
 <template>
     <draggable v-model="columns" group="columns" item-key="id" class="board">
         <template #item="{ element: column }">
-            <div class="column">
+            <div class="column" v-show="column.enabled">
                 <h2>{{ column.name }}</h2>
                 <draggable v-model="column.data" group="data" item-key="id">
                     <template #item="{ element: item }">
@@ -16,49 +16,16 @@
 </template>
 
 <script setup>
-import { ref } from 'vue';
+import { ref, watch } from 'vue';
 import draggable from 'vuedraggable';
+import loadColumns from '../utils/loadColumns';
 
-const columns = ref(sortByEnabled([
-    {
-        id: "backlog",
-        name: "Backlog",
-        default: false,
-        enabled: true,
-        data: [{ name: "log 1", id: 1 }],
-    },
-    {
-        id: "tasks",
-        name: "Tasks",
-        default: true,
-        enabled: true,
-        data: [{ name: "taks 1", id: 2 }, { name: "task 2", id: 3 }],
-    },
-    {
-        id: "progress",
-        name: "In progress",
-        default: true,
-        enabled: true,
-        data: [],
-    },
-    {
-        id: "done",
-        name: "Done",
-        default: true,
-        enabled: true,
-        data: [{ name: "done 1", id: 4 }],
-    }
-]));
+const columns = ref(loadColumns());
 
-
-/**
- * Function removes objects from given array where object.enabled = false.
- * @param columns {object[]} - Array with objects containing enabled property
- * @returns {object[]}
- */
-function sortByEnabled(columns) {
-    return columns.filter(column => column.enabled);
-}
+// save columns onChange in localStorage
+watch(columns, newColumns => {
+    localStorage.setItem('columns', JSON.stringify(newColumns));
+}, { deep: true });
 </script>
 
 <style scoped>
@@ -93,5 +60,9 @@ function sortByEnabled(columns) {
     border: 1px solid #ff4e4e;
     background-color: rgb(255, 195, 195);
     cursor: pointer;
+}
+
+.column div:not(.item) {
+    min-height: 100%;
 }
 </style>

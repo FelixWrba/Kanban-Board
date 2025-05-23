@@ -25,6 +25,7 @@ const isOpen = ref(false);
 
 <style scoped>
 nav {
+    z-index: 10;
     background-color: var(--bg-c);
     position: fixed;
     transition: all .3s;

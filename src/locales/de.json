@@ -19,6 +19,7 @@
     "light": "Hell",
     "dark": "Dunkel",
     "auto": "Automatisch",
+    "columns": "Spalten",
     "data": "Daten",
     "deleteData": "Daten löschen",
     "exportData": "Daten exportieren",
