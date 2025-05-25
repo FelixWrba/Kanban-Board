@@ -37,5 +37,21 @@
     "title": "someting went wong",
     "message": "file dont exist here",
     "action": "give up"
+  },
+  "imprint": {
+    "title": "Imprint of",
+    "responsible": "Responsible for content",
+    "contact": "Contact",
+    "copyright": "Copyright",
+    "copyrightText": "The content and works on these pages created by the site operators are subject to copyright. Reproduction, processing, distribution, and any form of exploitation outside the limits of copyright law require the written consent of the respective author or creator. Downloads and copies of this site are permitted for private use only. Commercial use of our content without the consent of the author is prohibited.",
+    "assets": "Used Assets"
+  },
+  "about": {
+    "title": "what?",
+    "contact": "mail",
+    "name": "name",
+    "subject": "why",
+    "message": "say",
+    "send": "do"
   }
 }

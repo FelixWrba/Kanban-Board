@@ -30,6 +30,16 @@ export const router = createRouter({
       component: () => import("../views/SettingsView.vue"),
     },
     {
+      path: "/imprint",
+      name: "imprint",
+      component: () => import("../views/ImprintView.vue"),
+    },
+    {
+      path: "/about",
+      name: "about",
+      component: () =>import('../views/AboutView.vue'),
+    },
+    {
       path:"/:pathMatch(.*)",
       name: "not found",
       component: () => import("../views/NotFound.vue"),

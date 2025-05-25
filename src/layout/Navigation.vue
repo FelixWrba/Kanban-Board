@@ -4,6 +4,7 @@ import { RouterLink } from "vue-router";
 import { HomeIcon, Cog6ToothIcon } from "@heroicons/vue/24/outline";
 
 const isOpen = ref(false);
+const year = new Date().getFullYear();
 </script>
 
 <template>
@@ -17,8 +18,9 @@ const isOpen = ref(false);
             </router-link>
         </div>
         <div class="legal">
-            <router-link to="/about" @click="isOpen = false">{{ $t('navigation.about') }}</router-link> • <router-link to="/imprint" @click="isOpen = false">{{ $t('navigation.imprint') }}</router-link>
-            <p>&copy;2025 Felix Wrba. {{ $t('navigation.copyright') }}</p>
+            <router-link to="/about" @click="isOpen = false">{{ $t('navigation.about') }}</router-link> • <router-link
+                to="/imprint" @click="isOpen = false">{{ $t('navigation.imprint') }}</router-link>
+            <p>&copy;2025{{ year > 2025 ? '-' + year : '' }} Felix Wrba. {{ $t('navigation.copyright') }}</p>
         </div>
     </nav>
 </template>

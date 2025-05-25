@@ -9,14 +9,12 @@ export default function loadColumns() {
     : [
         {
           id: "backlog",
-          name: "Backlog",
-          default: false,
+          default: true,
           enabled: true,
           data: [{ name: "log 1", id: 1 }],
         },
         {
           id: "tasks",
-          name: "Tasks",
           default: true,
           enabled: true,
           data: [
@@ -26,14 +24,12 @@ export default function loadColumns() {
         },
         {
           id: "progress",
-          name: "In progress",
           default: true,
           enabled: true,
           data: [],
         },
         {
           id: "done",
-          name: "Done",
           default: true,
           enabled: true,
           data: [{ name: "done 1", id: 4 }],

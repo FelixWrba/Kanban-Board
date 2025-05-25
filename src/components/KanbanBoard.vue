@@ -1,8 +1,13 @@
 <template>
+    <!-- KANBAN BOARD -->
     <draggable v-model="columns" group="columns" item-key="id" class="board">
         <template #item="{ element: column }">
+
+            <!-- COLUMN -->
             <div class="column" v-show="column.enabled">
-                <h2>{{ column.name }}</h2>
+                <!-- TITLE -->
+                <h2>{{ column.default ? $t('board.' + column.id) : column.id }}</h2>
+                <!-- ITEMS -->
                 <draggable v-model="column.data" group="data" item-key="id">
                     <template #item="{ element: item }">
                         <div class="item">
@@ -11,6 +16,7 @@
                     </template>
                 </draggable>
             </div>
+
         </template>
     </draggable>
 </template>

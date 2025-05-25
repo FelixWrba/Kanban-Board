@@ -11,7 +11,7 @@ const messages = {
 
 const preferences = JSON.parse(localStorage.getItem("preferences") || "{}");
 const language =
-  preferences.language || navigator.language === "de-DE" ? "german" : "english";
+  preferences.language || (navigator.language === "de-DE" ? "german" : "english");
 
 const i18n = createI18n({
   legacy: false,
