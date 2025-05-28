@@ -8,6 +8,19 @@
     "progress": "In progress",
     "done": "Done"
   },
+  "addModal": {
+    "label": "Create task",
+    "title": "Title",
+    "description": "Description",
+    "category": "Category",
+    "color": "Accent color",
+    "green": "Green",
+    "yellow": "Yellow",
+    "red": "Red",
+    "blue": "Blue",
+    "add": "Add",
+    "close": "Close"
+  },
   "settings": {
     "title": "Settings",
     "accessability": "Accessability",

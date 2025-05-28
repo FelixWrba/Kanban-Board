@@ -8,6 +8,19 @@
     "progress": "In Bearbeitung",
     "done": "Erledigt"
   },
+  "addModal": {
+    "label": "Aufgabe erstellen",
+    "title": "Titel",
+    "description": "Beschreibung",
+    "category": "Kategorie",
+    "color": "Akzentfarbe",
+    "green": "Grün",
+    "yellow": "Gelb",
+    "red": "Rot",
+    "blue": "Blau",
+    "add": "Hinzufügen",
+    "close": "Schließen"
+  },
   "settings": {
     "title": "Einstellungen",
     "accessability": "Zugänglichkeit",

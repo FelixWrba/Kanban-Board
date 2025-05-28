@@ -2,8 +2,7 @@
     <!-- KANBAN BOARD -->
     <draggable v-model="columns" group="columns" item-key="id" class="board">
         <template #item="{ element: column }">
-
-            <!-- COLUMN -->
+            
             <div class="column" v-show="column.enabled">
                 <!-- TITLE -->
                 <h2>{{ column.default ? $t('board.' + column.id) : column.id }}</h2>
@@ -19,12 +18,15 @@
 
         </template>
     </draggable>
+
+    <AddModal/>
 </template>
 
 <script setup>
 import { ref, watch } from 'vue';
 import draggable from 'vuedraggable';
 import loadColumns from '../utils/loadColumns';
+import AddModal from '../components/AddModal.vue';
 
 const columns = ref(loadColumns());
 

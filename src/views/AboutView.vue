@@ -35,11 +35,6 @@ form {
 }
 
 input, textarea {
-    font: inherit;
-    border: 1px solid var(--acc-c);
-    outline: none;
-    border-radius: 4px;
-    padding: 4px;
     flex: 1;
 }
 

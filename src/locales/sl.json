@@ -8,6 +8,19 @@
     "progress": "doin",
     "done": "sigma"
   },
+  "addModal": {
+    "label": "make do",
+    "title": "name",
+    "description": "text",
+    "category": "#",
+    "color": "shade",
+    "green": "gren",
+    "yellow": "yelow",
+    "red": "red",
+    "blue": "sky",
+    "add": "make",
+    "close": "vanish"
+  },
   "settings": {
     "title": "Config",
     "accessability": "Stuff",

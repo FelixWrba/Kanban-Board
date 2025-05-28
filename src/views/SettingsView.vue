@@ -94,15 +94,6 @@ function applyTheme(theme) {
     width: fit-content;
 }
 
-select {
-    border-radius: 4px;
-    border-color: var(--acc-c);
-    font: inherit;
-    outline: transparent;
-    background-color: var(--bg-c);
-    color: var(--text-c);
-}
-
 h2 {
     margin-top: 16px;
 }
