@@ -117,3 +117,25 @@ textarea {
   border-radius: 4px;
   padding: 4px;
 }
+
+.icon-btn {
+  cursor: pointer;
+  border: 1px solid transparent;
+  outline: none;
+  background-color: transparent;
+  border-radius: 4px;
+  transition: all .3s;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon-btn:hover {
+  border-color: var(--acc-c);
+}
+
+.icon {
+  width: 1.2em;
+  height: 1.2em;
+}

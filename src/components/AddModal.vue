@@ -1,17 +1,17 @@
 <template>
-    <dialog ref="dialog" @close="closeDialog">
+    <dialog ref="dialog" @close="closeDialog" aria-modal="true" role="dialog">
         <!-- form -->
-        <div class="add-form">
+        <form class="add-form" @submit.prevent="createTask">
             <h2>{{ $t('addModal.label') }}</h2>
 
             <label for="title">{{ $t('addModal.title') }}</label>
-            <input type="text" id="title" v-model="formData.title">
+            <input type="text" id="title" v-model="formData.title" required>
 
             <label for="description">{{ $t('addModal.description') }}</label>
             <textarea id="description" v-model="formData.description"></textarea>
 
             <label for="category">{{ $t('addModal.category') }}</label>
-            <input type="text" id="category" list="category-list" v-model="formData.category">
+            <input type="text" id="category" list="category-list" v-model="formData.category" required>
             <datalist id="category-list">
                 <option value="General"></option>
                 <option value="Work"></option>
@@ -20,7 +20,7 @@
             </datalist>
 
             <label for="color">{{ $t('addModal.color') }}</label>
-            <select id="color" v-model="formData.color">
+            <select id="color" v-model="formData.color" required>
                 <option value="green">{{ $t('addModal.green') }}</option>
                 <option value="yellow">{{ $t('addModal.yellow') }}</option>
                 <option value="red">{{ $t('addModal.red') }}</option>
@@ -28,25 +28,33 @@
             </select>
 
             <div class="cta">
-                <button @click="closeDialog" class="btn">{{ $t('addModal.add') }}</button>
-                <button @click="closeDialog" class="btn secondary">{{ $t('addModal.close') }}</button>
+                <button type="submit" class="btn">{{ $t('addModal.add') }}</button>
+                <button type="button" @click="closeDialog" class="btn secondary">{{ $t('addModal.close') }}</button>
             </div>
-        </div>
+        </form>
     </dialog>
-
-    <button @click="openDialog" class="btn">Öffnen</button>
 </template>
 
 <script setup>
 import { ref } from 'vue';
 
-const dialog = ref('dialog');
-const formData = ref({
+const dialog = ref(null);
+const emit = defineEmits(['addData']);
+
+const defaultForm = {
     title: "",
     description: "",
     category: "",
     color: "red"
-});
+};
+
+const formData = ref({ ...defaultForm });
+const clearFormData = () => formData.value = { ...defaultForm };
+
+function createTask() {
+    emit('addData', { ...formData.value });
+    closeDialog();
+}
 
 function openDialog() {
     dialog.value.showModal();
@@ -57,10 +65,12 @@ function closeDialog() {
     dialog.value.classList.add('leave');
     setTimeout(() => {
         dialog.value.classList.remove('leave');
-        // close dialog after animation ends
-        dialog.value.close();
+        dialog.value.close(); // close dialog after animation ends
+        clearFormData();
     }, 300);
 }
+
+defineExpose({ openDialog });
 </script>
 
 <style scoped>
@@ -83,7 +93,8 @@ dialog {
     color: var(--txt-c);
 }
 
-dialog.leave, dialog.leave::backdrop {
+dialog.leave,
+dialog.leave::backdrop {
     transform: translateY(1em);
     opacity: 0;
     transition: all .3s;
